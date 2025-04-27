@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Siham !</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffebee;
+            padding: 20px;
+            background-image: url('hiking.jpg');
+            background-size: cover;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content {
+            flex: 1;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .birthday-cake {
+            font-size: 5em;
+            margin: 20px 0;
+            animation: bounce 1s infinite alternate;
+        }
+        
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #e91e63;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .buttons-container {
+            margin-top: auto;
+            padding-top: 30px;
+            min-height: 120px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #yes {
+            background-color: #4caf50;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.2s;
+        }
+        
+        #yes:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+        
+        .hidden-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #e91e63;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .heart {
+            color: red;
+            font-size: 1.5em;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .music-control i {
+            font-size: 24px;
+            color: #e91e63;
+        }
+        
+        .scroll-down-arrow {
+            margin-top: 20px;
+            font-size: 2em;
+            animation: bounce 1s infinite alternate;
+            cursor: pointer;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer a {
+            color: #e91e63;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+            color: #c2185b;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="musique.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <div class="container">
+        <div class="content">
+            <div class="birthday-cake">🎂</div>
+            <h1>Joyeux Anniversaire, Siham !</h1>
+            
+            <div class="photo-container">
+                <img src="siham.jpg" alt="Photo de Siham">
+            </div>
+            
+            <p>Bon anniversaire à toi ! 🎉</p>
+            <p>Pour célébrer ce jour spécial, j'ai une question très importante à te poser...</p>
+            
+            <div class="question">
+                <p>Veux-tu aller en date avec moi ce weekend ?</p>
+                <p><small>(Je promets qu'il y aura du gâteau <span class="heart">♥</span>)</small></p>
+            </div>
+            
+            <div class="scroll-down-arrow" onclick="scrollToButtons()">👇</div>
+        </div>
+        
+        <div class="buttons-container">
+            <div class="buttons">
+                <button id="yes" class="btn">Oui !</button>
+                <button id="no" class="btn">Non</button>
+            </div>
+            
+            <div id="response" class="hidden-message">
+                Youpi ! Je réserve la table tout de suite ! 🎉<br>
+                Envoie-moi un message pour qu'on organise ça !
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Créé avec ❤️ par Seddik | 
+            <a href="https://www.instagram.com/seddik_benhajjaj" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> @seddik_benhajjaj
+            </a>
+        </div>
+    </div>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <script>
+        // Éléments du DOM
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const response = document.getElementById('response');
+        const bgMusic = document.getElementById('bgMusic');
+        const buttonsContainer = document.querySelector('.buttons-container');
+        
+        // Faire défiler jusqu'aux boutons
+        function scrollToButtons() {
+            buttonsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Au chargement de la page, vérifier si on doit scroller
+        window.addEventListener('load', function() {
+            if (window.innerHeight < 800) {
+                setTimeout(scrollToButtons, 1000);
+            }
+        });
+        
+        // Fonction pour activer/désactiver la musique
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(e => {
+                    alert("Clique sur 'Oui !' pour activer la musique automatiquement!");
+                });
+                document.querySelector('.music-control i').classList.replace('fa-music', 'fa-volume-up');
+            } else {
+                bgMusic.pause();
+                document.querySelector('.music-control i').classList.replace('fa-volume-up', 'fa-music');
+            }
+        }
+        
+        // Faire bouger le bouton "Non" quand la souris s'approche
+        noButton.addEventListener('mouseover', function() {
+            // Déplacement limité autour de la position initiale
+            const maxDistance = 350;
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * maxDistance;
+            
+            const x = Math.cos(angle) * distance;
+            const y = Math.sin(angle) * distance;
+            
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+            
+            // Changer le texte parfois pour rigoler
+            const randomTexts = ["Sûr ?", "Vraiment ?", "Réfléchis bien", "Tu vas regretter", "Pas de gâteau alors"];
+            if(Math.random() > 0.1) {
+                noButton.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+            }
+        });
+        
+        // Réaction quand on clique sur Oui
+        yesButton.addEventListener('click', function() {
+            response.style.display = 'block';
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+            document.querySelector('.question').innerHTML = '<p>Super choix ! 🎉</p>';
+            
+            if(bgMusic.paused) {
+                bgMusic.play();
+                document.querySelector('.music-control i').classList.replace('fa-music', 'fa-volume-up');
+            }
+            
+            for(let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        });
+        
+        // Fonction pour créer des confettis
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = ['🎉', '🎊', '🎈', '🎁', '🎂'][Math.floor(Math.random() * 5)];
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.top = -50 + 'px';
+            confetti.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            confetti.style.zIndex = '5';
+            confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+            
+            document.body.appendChild(confetti);
+            
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

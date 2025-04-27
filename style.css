@@ -1,0 +1,5 @@
+.photo-container {
+    width: 250px;  /* Augmenter pour une photo plus grande */
+    height: 250px; /* Doit être identique à width */
+    border: 8px solid #ff69b4; /* Changer la couleur de la bordure */
+}
